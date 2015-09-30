@@ -7,18 +7,18 @@ int edge;
 int sa;
 int vol;
 
-int sideSA(edge){
-	sa = edge^2;
+int sideSA(int edge){
+	sa = edge*edge;
 	return sa;
 }
 
-int cubeSA(edge){
-	sa = (edge^2)*6;
+int cubeSA(int edge){
+	sa = (edge*edge)*6;
 	return sa;
 }
 
-int volume(edge){
-	vol = edge^3;
+int volume(int edge){
+	vol = edge*edge*edge;
 	return vol;
 }
 
@@ -27,9 +27,9 @@ int main(){
 	cout << "Edge Length: ";
 	cin >> edge;
 
-	cout << "\nThe surface area of 1 side is: " << sideSA(edge);
-	cout << "\nThe surface area of the cube is: " << cubeSA(edge);
-	cout << "\nThe volume of the cube is: " << volume(edge) << "\n";
+	cout << "\nThe surface area of 1 side is: " << sideSA(edge) << " Units^2";
+	cout << "\nThe surface area of the cube is: " << cubeSA(edge) << " Units^2";
+	cout << "\nThe volume of the cube is: " << volume(edge) << " Units^3\n";
 
 	return 0;
 }
