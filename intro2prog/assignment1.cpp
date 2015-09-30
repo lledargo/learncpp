@@ -6,19 +6,35 @@ using namespace std;
 int edge;
 int sa;
 int vol;
+int exp;
+int num;
+int result;
+
+int power(int exp, int num)
+{
+	int i = 0;
+	result = 1;
+
+	while(i < exp)
+	{
+		result = result * num;
+		i++;
+	}
+	return result;
+}
 
 int sideSA(int edge){
-	sa = edge*edge;
+	sa = power(2,edge);
 	return sa;
 }
 
 int cubeSA(int edge){
-	sa = (edge*edge)*6;
+	sa = power(2,edge)*6;
 	return sa;
 }
 
 int volume(int edge){
-	vol = edge*edge*edge;
+	vol = power(3,edge);
 	return vol;
 }
 
@@ -30,6 +46,6 @@ int main(){
 	cout << "\nThe surface area of 1 side is: " << sideSA(edge) << " Units^2";
 	cout << "\nThe surface area of the cube is: " << cubeSA(edge) << " Units^2";
 	cout << "\nThe volume of the cube is: " << volume(edge) << " Units^3\n";
-
+	
 	return 0;
 }
